@@ -26,7 +26,6 @@ def angle_to_position(angle):
 
 
 def main():
-    # Initialize Dynamixel
     try:
         curr_angle = 0
         while True:
