@@ -1,11 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
-angle_test = "angle-test"
 import angle_test
 
 # Data for the graph
 x = time
-y1 = gyro_roll
+y1 = 
 y2 = accel_roll
 y3 = complementary_roll
 

@@ -19,7 +19,7 @@ def calculate_angle_comp(accel_x, accel_y, accel_z,gyro_x, gyro_y, gyro_z,angle)
   gyro_roll = angle + gyro_x * DT
   # Apply the complementary filter
   angle = ALPHA * gyro_roll + (1 - ALPHA) * accel_roll
-  return angle
+  return accel_roll, gyro_roll, angle
 
 # Kalman Filter angle calculation
 def calculate_angle_kalman():
@@ -31,7 +31,7 @@ def main():
         while True:
           start=time.clock_gettime(0)
           accel_x, accel_y, accel_z, gyro_x, gyro_y, gyro_z = imu.read_accelerometer_gyro_data()
-          curr_angle = calculate_angle(accel_x, accel_y, accel_z,gyro_x, gyro_y, gyro_z,curr_angle)
+          accel_roll, gyro_roll, curr_angle = calculate_angle(accel_x, accel_y, accel_z,gyro_x, gyro_y, gyro_z,curr_angle)
 
           abs_g = math.sqrt(accel_x*accel_x+accel_y*accel_y+accel_z*accel_z)
           
