@@ -1,6 +1,5 @@
-%matplotlib notebook
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
+import matplotlib.animation as animation
 import numpy as np
 import time
 
@@ -18,7 +17,8 @@ ax.legend()
 # Initialize the data source
 start_time = time.time()
 
-def update(frame):
+# Call this function periodically
+def animate(i, xs, ys):
     current_time = time.time() - start_time
     new_x = current_time
     new_y = np.sin(2 * np.pi * current_time)
@@ -35,8 +35,7 @@ def update(frame):
     # Update the line plot
     line.set_data(x_data, y_data)
     ax.set_xlim(max(0, new_x - 10), new_x)  # Keep the x-axis scrolling dynamically
-    return line,
 
 # Create the animation
-ani = FuncAnimation(fig, update, interval=100, save_count=100)  # Update every 100 ms
+ani = animation.FuncAnimation(fig, animate, fargs=(x_data, y_data), interval=100, save_count=100)  # Update every 100 ms
 plt.show()
