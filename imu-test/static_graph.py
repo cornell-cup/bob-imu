@@ -27,12 +27,5 @@ plt.legend()
 
 # Show the plot
 plt.grid(True)
-plt.show()
-
-
-
-
-
-
-
+plt.savefig('example_graph.png')
 plt.show()
