@@ -24,7 +24,7 @@ plt.plot(df['Time_stamp'], df['com_angle'], label='Com Angle')
 # Add labels and title
 plt.title('Time-Series Plot')
 plt.xlabel('Time')
-plt.ylabel('Value')
+plt.ylabel('Degrees')
 plt.legend()
 
 # Show the plot
