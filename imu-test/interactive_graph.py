@@ -4,7 +4,8 @@ import numpy as np
 import time
 
 # Set up the figure and axis
-fig, ax = plt.subplots()
+fig = plt.figure()
+ax = fig.add_subplot(1, 1, 1)
 x_data, y_data = [], []
 line, = ax.plot([], [], 'b-', label="Sine Wave")
 ax.set_xlim(0, 10)
@@ -18,10 +19,10 @@ ax.legend()
 start_time = time.time()
 
 # Call this function periodically
-def animate(i, xs, ys):
+def animate(i, x_data, y_data):
     current_time = time.time() - start_time
     new_x = current_time
-    new_y = np.sin(2 * np.pi * current_time)
+    new_y = (2 * np.pi * current_time)
     
     # Append new data
     x_data.append(new_x)
@@ -33,9 +34,10 @@ def animate(i, xs, ys):
         y_data.pop(0)
     
     # Update the line plot
-    line.set_data(x_data, y_data)
-    ax.set_xlim(max(0, new_x - 10), new_x)  # Keep the x-axis scrolling dynamically
+    ax.clear()
+    ax.plot(x_data, y_data)
+    # ax.set_xlim(max(0, new_x - 10), new_x)  # Keep the x-axis scrolling dynamically
 
 # Create the animation
-ani = animation.FuncAnimation(fig, animate, fargs=(x_data, y_data), interval=100, save_count=100)  # Update every 100 ms
+ani = animation.FuncAnimation(fig, animate, fargs=(x_data, y_data), interval=1000)  # Update every 100 ms
 plt.show()
