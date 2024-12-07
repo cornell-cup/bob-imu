@@ -26,6 +26,7 @@ plt.title('Time-Series Plot')
 plt.xlabel('Time')
 plt.ylabel('Degrees')
 plt.legend()
+plt.ylim(-180, 180)
 
 # Show the plot
 plt.grid(True)
