@@ -16,8 +16,10 @@ print(df.head())
 # Example: Assuming the CSV has columns 'Time' and 'Value'
 plt.figure(figsize=(10, 5))
 
-# column names
-plt.plot(df['Time_stamp'], df['accel_roll'], df['gyro_roll'], df['com_angle'], label='Value over Time')
+# Plot each series
+plt.plot(df['Time_stamp'], df['accel_roll'], label='Accel Roll')
+plt.plot(df['Time_stamp'], df['gyro_roll'], label='Gyro Roll')
+plt.plot(df['Time_stamp'], df['com_angle'], label='Com Angle')
 
 # Add labels and title
 plt.title('Time-Series Plot')
