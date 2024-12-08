@@ -1,4 +1,5 @@
 #!/usr/bin/env
+%matplotlib widget
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
@@ -6,7 +7,7 @@ import time
 
 
 # Set up the figure and axis
-# plt.ion()
+plt.ion()
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)
 x_data, y_data = [], []
@@ -25,7 +26,7 @@ start_time = time.time()
 def animate(i, x_data, y_data):
     current_time = time.time() - start_time
     new_x = current_time
-    new_y = (2 * np.pi * current_time)
+    new_y = np.sin(2 * np.pi * current_time)
     
     # Append new data
     x_data.append(new_x)
@@ -42,5 +43,5 @@ def animate(i, x_data, y_data):
     # ax.set_xlim(max(0, new_x - 10), new_x)  # Keep the x-axis scrolling dynamically
 
 # Create the animation
-ani = animation.FuncAnimation(fig, animate, fargs=(x_data, y_data), interval=1000, cache_frame_data=True)  # Update every 100 ms
+ani = animation.FuncAnimation(fig, animate, fargs=(x_data, y_data), interval=1000, cache_frame_data=False)  # Update every 100 ms
 plt.show()
