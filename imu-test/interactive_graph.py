@@ -6,7 +6,7 @@ import time
 
 
 # Set up the figure and axis
-plt.ion()
+# plt.ion()
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)
 x_data, y_data = [], []
