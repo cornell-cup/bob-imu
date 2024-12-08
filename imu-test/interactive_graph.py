@@ -1,4 +1,4 @@
-#! /usr/bin/env
+#!/usr/bin/env
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
@@ -42,5 +42,5 @@ def animate(i, x_data, y_data):
     # ax.set_xlim(max(0, new_x - 10), new_x)  # Keep the x-axis scrolling dynamically
 
 # Create the animation
-ani = animation.FuncAnimation(fig, animate, fargs=(x_data, y_data), interval=1000, cache_frame_data=False)  # Update every 100 ms
+ani = animation.FuncAnimation(fig, animate, fargs=(x_data, y_data), interval=1000, cache_frame_data=True)  # Update every 100 ms
 plt.show()
