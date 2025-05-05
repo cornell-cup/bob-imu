@@ -5,14 +5,20 @@ import angle_test
 
 # Data for the graph
 x = time
-y1 = accel_roll
-y2 = gyro_roll
-y3 = kalman_roll
+r1 = accel_roll
+r2 = gyro_roll
+r3 = comp_roll
+r4 = kalman_roll
+p1 = accel_pitch
+p2 = gyro_pitch
+p3 = comp_pitch
+p4 = kalman_pitch
 
 # Create the plot
-plt.plot(x, y1, label='gyro_roll')
-plt.plot(x, y2, label='accel_roll')
-plt.plot(x, y3, label='complementary_roll')
+plt.plot(x, r1, label='gyro_roll')
+plt.plot(x, r2, label='accel_roll')
+plt.plot(x, r3, label='complementary_roll')
+plt.plot(x, r3, label='kalman_roll')
 
 # Add labels and a legend
 plt.title('Example Graph')
