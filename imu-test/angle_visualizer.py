@@ -5,9 +5,9 @@ import angle_test
 
 # Data for the graph
 x = time
-y1 = 
-y2 = accel_roll
-y3 = complementary_roll
+y1 = accel_roll
+y2 = gyro_roll
+y3 = kalman_roll
 
 # Create the plot
 plt.plot(x, y1, label='gyro_roll')
@@ -19,9 +19,6 @@ plt.title('Example Graph')
 plt.xlabel('time')
 plt.ylabel('angle')
 plt.legend()
-
-# Show the plot
-plt.show()
 
 plt.savefig('example_graph.png')
 
