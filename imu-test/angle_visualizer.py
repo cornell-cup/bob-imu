@@ -25,7 +25,7 @@ def main():
 
     try:
         
-        while time.time() - start_time < 10: # Run for 10 seconds  
+        while time.time() - start_time < 5: # Run for 10 seconds  
             loop_start = time.time()
 
             accel_x, accel_y, accel_z, gyro_x, gyro_y, gyro_z = imu.read_accelerometer_gyro_data()
