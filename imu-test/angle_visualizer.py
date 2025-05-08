@@ -14,7 +14,7 @@ start_time = time.time()
 
 def main():
     curr_angle = 0
-
+    kf = kft.kalman_filter()
     time_log = []
     accel_roll_log = []
     gyro_roll_log = []
@@ -36,12 +36,12 @@ def main():
             z = kft.sensor_reading(accel_x, accel_y, accel_z, gyro_x, gyro_y, curr_angle)
 
             # Predict and update steps for Kalman Filter
-            kft.kf.predict()
-            kft.kf.update(z)
+            kf.predict()
+            kf.update(z)
 
             # Extract filtered pitch and roll
             # filtered_pitch = kft.kf.x[0][0]
-            filtered_roll = kft.kf.x[2][0]
+            filtered_roll = kf.x[2][0]
 
             # Log data
             time_log.append(time.time() - start_time)
