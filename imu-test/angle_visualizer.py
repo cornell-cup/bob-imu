@@ -60,7 +60,7 @@ def main():
         print("Stopping...")
 
     # Data for the graph
-    x = time
+    x = time_log
     r1 = accel_roll_log
     r2 = gyro_roll_log
     r3 = comp_roll_log
