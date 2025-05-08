@@ -61,7 +61,7 @@ def main():
     plt.plot(x, r1, label='gyro_roll')
     plt.plot(x, r2, label='accel_roll')
     plt.plot(x, r3, label='complementary_roll')
-    plt.plot(x, r4, label='kalman_roll')
+    # plt.plot(x, r4, label='kalman_roll')
 
     # Add labels and a legend
     plt.title('Roll Angle Over Time')
