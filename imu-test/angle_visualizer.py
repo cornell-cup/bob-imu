@@ -5,7 +5,7 @@ import math
 import matplotlib.pyplot as plt
 
 import angle_test
-import angle_test_Rhea as kft
+import kalman_filter as kft
 DT = 0.01
 ALPHA = 0.9
 imu = ICM20948()
